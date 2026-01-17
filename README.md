@@ -28,6 +28,6 @@ git init
 git add .
 git commit -m "init"
 git branch -M main
-git remote add origin https://github.com/Yangkunliang/screenshots-util.git
+git remote add origin https://github.com/xxx/screenshots-util.git
 git push -u origin main
 ```
