@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scroll Demo</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+          sans-serif;
+        background: #0b1220;
+        color: #e5e7eb;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        padding: 16px 20px;
+        background: rgba(11, 18, 32, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        z-index: 10;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        height: 100vh;
+      }
+      .sidebar {
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 16px;
+      }
+      .content {
+        padding: 16px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 12px;
+      }
+      .scroll-box {
+        height: calc(100vh - 120px);
+        overflow-y: auto;
+        padding-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>滚动容器示例（内容在右侧卡片内滚动）</header>
+    <div class="layout">
+      <div class="sidebar">
+        <div class="card">Sidebar</div>
+        <div class="card">Menu</div>
+        <div class="card">Links</div>
+      </div>
+      <div class="content">
+        <div class="card">
+          <div class="scroll-box" id="scroll">
+            <div class="card">Section 1</div>
+            <div class="card">Section 2</div>
+            <div class="card">Section 3</div>
+            <div class="card">Section 4</div>
+            <div class="card">Section 5</div>
+            <div class="card">Section 6</div>
+            <div class="card">Section 7</div>
+            <div class="card">Section 8</div>
+            <div class="card">Section 9</div>
+            <div class="card">Section 10</div>
+            <div class="card">Section 11</div>
+            <div class="card">Section 12</div>
+            <div class="card">Section 13</div>
+            <div class="card">Section 14</div>
+            <div class="card">Section 15</div>
+            <div class="card">Section 16</div>
+            <div class="card">Section 17</div>
+            <div class="card">Section 18</div>
+            <div class="card">Section 19</div>
+            <div class="card">Section 20</div>
+            <div class="card">Section 21</div>
+            <div class="card">Section 22</div>
+            <div class="card">Section 23</div>
+            <div class="card">Section 24</div>
+            <div class="card">Section 25</div>
+            <div class="card">Section 26</div>
+            <div class="card">Section 27</div>
+            <div class="card">Section 28</div>
+            <div class="card">Section 29</div>
+            <div class="card">Section 30</div>
+            <div class="card">Section 31</div>
+            <div class="card">Section 32</div>
+            <div class="card">Section 33</div>
+            <div class="card">Section 34</div>
+            <div class="card">Section 35</div>
+            <div class="card">Section 36</div>
+            <div class="card">Section 37</div>
+            <div class="card">Section 38</div>
+            <div class="card">Section 39</div>
+            <div class="card">Section 40</div>
+            <div class="card">Section 41</div>
+            <div class="card">Section 42</div>
+            <div class="card">Section 43</div>
+            <div class="card">Section 44</div>
+            <div class="card">Section 45</div>
+            <div class="card">Section 46</div>
+            <div class="card">Section 47</div>
+            <div class="card">Section 48</div>
+            <div class="card">Section 49</div>
+            <div class="card">Section 50</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,18 @@
+.DS_Store
+
+# Outputs
+screenshots/
+*.png
+
+# Local/private config (do NOT commit)
+grafana_auto.yaml
+grafana_auto.local.yaml
+
+# Login state / browser profiles (do NOT commit)
+.grafana_auto_profile/
+.grafana_auto_profile_test*/
+
+# Node deps cache
+.grafana_auto_deps/node_modules/
+.grafana_auto_deps/package-lock.json
+npm-debug.log*

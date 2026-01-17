@@ -1,0 +1,22 @@
+defaults:
+  waitSeconds: 30
+  width: 1600
+  height: 900
+  scrollWaitMs: 250
+  stitch: true
+  headless: true
+  profileDir: ./.grafana_auto_profile
+  outDir: ./screenshots/${name}
+  filename: ${name}_${timestamp}.png
+  enabled: true
+
+targets:
+  - name: scroll_demo
+    url: file:///ABSOLUTE/PATH/TO/scroll_demo.html
+    waitSeconds: 1
+    enabled: true
+  - name: grafana_home
+    url: https://grafana.example.com/
+    waitSeconds: 30
+    outDir: ./screenshots/grafana/${name}
+    enabled: false

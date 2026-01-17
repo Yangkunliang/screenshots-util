@@ -1,0 +1,36 @@
+defaults:
+  waitSeconds: 30
+  width: 1600
+  height: 900
+  scrollWaitMs: 250
+  stitch: true
+  headless: true
+  profileDir: ./.grafana_auto_profile
+  outDir: ./screenshots/${name}
+  filename: ${name}_${timestamp}.png
+  enabled: true
+
+targets:
+  - name: scroll_demo
+    url: file:///ABSOLUTE/PATH/TO/scroll_demo.html
+    waitSeconds: 1
+    enabled: false
+
+  - name: scroll_demo_alt
+    url: file:///ABSOLUTE/PATH/TO/scroll_demo.html
+    waitSeconds: 1
+    outDir: ./screenshots/alt/${name}
+    enabled: false
+
+  - name: grafana_project_a
+    url: https://grafana.example.com/d/xxxx/project-a?orgId=1
+    waitSeconds: 60
+    outDir: ./screenshots/project_a
+    enabled: false
+
+  - name: grafana_project_b
+    url: https://grafana.example.com/d/yyyy/project-b?orgId=1
+    waitSeconds: 60
+    outDir: ./screenshots/project_b
+    enabled: false
+
