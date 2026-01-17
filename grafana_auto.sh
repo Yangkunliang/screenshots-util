@@ -16,7 +16,7 @@ PROFILE_DIR_DEFAULT="${SCRIPT_DIR}/.grafana_auto_profile"
 HEADLESS_DEFAULT=1
 CONFIG_PATH_LOCAL_DEFAULT="${SCRIPT_DIR}/grafana_auto.yaml"
 CONFIG_PATH_LOCAL_ALT_DEFAULT="${SCRIPT_DIR}/grafana_auto.local.yaml"
-CONFIG_PATH_TEMPLATE_DEFAULT="${SCRIPT_DIR}/grafana_auto.demo.yaml"
+CONFIG_PATH_TEMPLATE_DEFAULT="${SCRIPT_DIR}/configs/grafana_auto.demo.yaml"
 
 usage() {
   cat <<'USAGE'
@@ -203,7 +203,7 @@ if [[ ${USE_CONFIG} -eq 1 ]] || [[ -f "${CONFIG_PATH}" && ${CLI_OVERRIDE} -eq 0 
   if [[ ${OVERRIDE_PROFILE_NAME} -eq 1 ]]; then EXTRA_ARGS+=(--profile-name "${PROFILE_NAME}"); fi
 
   if [[ -n "${TARGET_NAME}" ]]; then
-    NODE_PATH="${DEPS_DIR}/node_modules" node "${SCRIPT_DIR}/grafana_auto_runner.js" \
+    NODE_PATH="${DEPS_DIR}/node_modules" node "${SCRIPT_DIR}/src/grafana_auto_runner.js" \
       --script-dir "${SCRIPT_DIR}" \
       --deps-dir "${DEPS_DIR}" \
       --config "${CONFIG_PATH}" \
@@ -211,7 +211,7 @@ if [[ ${USE_CONFIG} -eq 1 ]] || [[ -f "${CONFIG_PATH}" && ${CLI_OVERRIDE} -eq 0 
       --headless "${HEADLESS}" \
       ${EXTRA_ARGS[@]+"${EXTRA_ARGS[@]}"}
   else
-    NODE_PATH="${DEPS_DIR}/node_modules" node "${SCRIPT_DIR}/grafana_auto_runner.js" \
+    NODE_PATH="${DEPS_DIR}/node_modules" node "${SCRIPT_DIR}/src/grafana_auto_runner.js" \
       --script-dir "${SCRIPT_DIR}" \
       --deps-dir "${DEPS_DIR}" \
       --config "${CONFIG_PATH}" \
@@ -234,7 +234,7 @@ SCREENSHOT_PATH="${SCREENSHOT_DIR}/grafana_${TIMESTAMP}.png"
 WAIT_MS="$((WAIT_TIME_SECONDS * 1000))"
 
 if [[ -n "${PROFILE_NAME}" ]]; then
-  NODE_PATH="${DEPS_DIR}/node_modules" node "${SCRIPT_DIR}/grafana_screenshot.js" \
+  NODE_PATH="${DEPS_DIR}/node_modules" node "${SCRIPT_DIR}/src/grafana_screenshot.js" \
     --url "${GRAFANA_URL}" \
     --output "${SCREENSHOT_PATH}" \
     --wait-ms "${WAIT_MS}" \
@@ -244,7 +244,7 @@ if [[ -n "${PROFILE_NAME}" ]]; then
     --profile-directory "${PROFILE_NAME}" \
     --headless "${HEADLESS}"
 else
-  NODE_PATH="${DEPS_DIR}/node_modules" node "${SCRIPT_DIR}/grafana_screenshot.js" \
+  NODE_PATH="${DEPS_DIR}/node_modules" node "${SCRIPT_DIR}/src/grafana_screenshot.js" \
     --url "${GRAFANA_URL}" \
     --output "${SCREENSHOT_PATH}" \
     --wait-ms "${WAIT_MS}" \

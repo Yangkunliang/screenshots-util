@@ -79,7 +79,7 @@ function runScreenshot({ scriptDir, depsDir, screenshotArgs }) {
 
   const result = spawnSync(
     process.execPath,
-    [path.join(scriptDir, "grafana_screenshot.js"), ...screenshotArgs],
+    [path.join(scriptDir, "src", "grafana_screenshot.js"), ...screenshotArgs],
     { env, stdio: "inherit" },
   );
 
@@ -87,7 +87,7 @@ function runScreenshot({ scriptDir, depsDir, screenshotArgs }) {
 }
 
 function main() {
-  const scriptDir = path.resolve(getArg("--script-dir") || __dirname);
+  const scriptDir = path.resolve(getArg("--script-dir") || path.join(__dirname, ".."));
   const depsDir = path.resolve(getArg("--deps-dir") || path.join(scriptDir, ".grafana_auto_deps"));
   const configPath = path.resolve(getArg("--config") || path.join(scriptDir, "grafana_auto.yaml"));
   const targetName = getArg("--target");
@@ -218,3 +218,4 @@ function main() {
 }
 
 main();
+

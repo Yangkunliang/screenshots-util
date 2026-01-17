@@ -6,12 +6,12 @@
 - 内部滚动容器的“滚动 + 拼接”长图
 
 ## 使用教程
-详见：[GRAFANA_AUTO.md](./GRAFANA_AUTO.md)
+详见：[docs/GRAFANA_AUTO.md](./docs/GRAFANA_AUTO.md)
 
 ## 开源发布注意事项
 - 不要提交真实 Grafana 地址、账号、Cookie、Token
 - 把真实链接放在 `grafana_auto.yaml`（已被 .gitignore 忽略）
-- 仓库内提交 `grafana_auto.demo.yaml` 作为可公开的模板示例
+- 仓库内提交 `configs/grafana_auto.demo.yaml` 作为可公开的模板示例
 
 ## 发布到 GitHub（示例）
 在推送前，建议先确认本地没有敏感信息被纳入提交：

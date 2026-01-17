@@ -12,12 +12,12 @@ defaults:
 
 targets:
   - name: scroll_demo
-    url: file:///ABSOLUTE/PATH/TO/scroll_demo.html
+    url: file:///ABSOLUTE/PATH/TO/demo/scroll_demo.html
     waitSeconds: 1
     enabled: false
 
   - name: scroll_demo_alt
-    url: file:///ABSOLUTE/PATH/TO/scroll_demo.html
+    url: file:///ABSOLUTE/PATH/TO/demo/scroll_demo.html
     waitSeconds: 1
     outDir: ./screenshots/alt/${name}
     enabled: false

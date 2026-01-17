@@ -16,11 +16,11 @@
 
 ## 快速开始
 1. 推荐使用本地私有配置文件：`grafana_auto.yaml`（不要提交到 Git）
-2. 参考模板配置文件：`grafana_auto.demo.yaml`
-2. 执行：
+2. 参考模板配置文件：`configs/grafana_auto.demo.yaml`
+3. 执行：
 
 ```bash
-cp ./grafana_auto.demo.yaml ./grafana_auto.yaml
+cp ./configs/grafana_auto.demo.yaml ./grafana_auto.yaml
 # 编辑 grafana_auto.yaml，把 url/outDir/enabled 改成你自己的
 
 ./grafana_auto.sh
@@ -32,7 +32,7 @@ cp ./grafana_auto.demo.yaml ./grafana_auto.yaml
 配置文件默认读取顺序：
 1. `grafana_auto.yaml`（优先，本地私有配置，建议放真实 Grafana 链接/目录）
 2. `grafana_auto.local.yaml`（可选：另一份本地私有配置文件）
-3. `grafana_auto.demo.yaml`（模板示例，适合提交到 GitHub）
+3. `configs/grafana_auto.demo.yaml`（模板示例，适合提交到 GitHub）
 
 结构如下：
 
@@ -143,3 +143,4 @@ targets:
 ### 2）截图变成登录页
 - 先用 `--headful` 登录一次，确认登录完成后再跑 headless
 - 确认该 target 的 `profileDir` 没变（变了相当于新浏览器 Profile，需要重新登录）
+
