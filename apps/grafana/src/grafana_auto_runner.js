@@ -73,13 +73,13 @@ function pick(value, fallback) {
   return value === undefined || value === null || value === "" ? fallback : value;
 }
 
-function runScreenshot({ scriptDir, depsDir, screenshotArgs }) {
+function runScreenshot({ depsDir, appDir, screenshotArgs }) {
   const nodePath = path.join(depsDir, "node_modules");
   const env = { ...process.env, NODE_PATH: nodePath };
 
   const result = spawnSync(
     process.execPath,
-    [path.join(scriptDir, "src", "grafana_screenshot.js"), ...screenshotArgs],
+    [path.join(appDir, "src", "grafana_screenshot.js"), ...screenshotArgs],
     { env, stdio: "inherit" },
   );
 
@@ -87,9 +87,10 @@ function runScreenshot({ scriptDir, depsDir, screenshotArgs }) {
 }
 
 function main() {
-  const scriptDir = path.resolve(getArg("--script-dir") || path.join(__dirname, ".."));
-  const depsDir = path.resolve(getArg("--deps-dir") || path.join(scriptDir, ".grafana_auto_deps"));
-  const configPath = path.resolve(getArg("--config") || path.join(scriptDir, "grafana_auto.yaml"));
+  const projectDir = path.resolve(getArg("--project-dir") || path.join(__dirname, "..", "..", ".."));
+  const appDir = path.resolve(getArg("--app-dir") || path.join(projectDir, "apps", "grafana"));
+  const depsDir = path.resolve(getArg("--deps-dir") || path.join(projectDir, ".deps"));
+  const configPath = path.resolve(getArg("--config") || path.join(projectDir, "grafana_auto.yaml"));
   const targetName = getArg("--target");
   const headless = getBoolArg("--headless", true);
   const overrideOutDir = getArg("--out-dir");
@@ -166,7 +167,7 @@ function main() {
 
     const profileDir = pick(
       overrideProfileDir,
-      pick(target.profileDir, pick(defaults.profileDir, path.join(scriptDir, ".grafana_auto_profile"))),
+      pick(target.profileDir, pick(defaults.profileDir, path.join(projectDir, ".grafana_auto_profile"))),
     );
     const profileName = pick(
       overrideProfileName,
@@ -174,7 +175,7 @@ function main() {
     );
 
     const outDir = renderTemplate(
-      pick(overrideOutDir, pick(target.outDir, pick(defaults.outDir, path.join(scriptDir, "screenshots")))),
+      pick(overrideOutDir, pick(target.outDir, pick(defaults.outDir, path.join(projectDir, "screenshots")))),
       vars,
     );
 
@@ -212,7 +213,7 @@ function main() {
       screenshotArgs.push("--profile-directory", profileName);
     }
 
-    runScreenshot({ scriptDir, depsDir, screenshotArgs });
+    runScreenshot({ depsDir, appDir, screenshotArgs });
     process.stdout.write(`完成: ${outputPath}\n`);
   }
 }

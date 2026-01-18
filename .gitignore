@@ -3,16 +3,26 @@
 # Outputs
 screenshots/
 *.png
+posts/
+xhs_images/
+logs/
 
 # Local/private config (do NOT commit)
 grafana_auto.yaml
 grafana_auto.local.yaml
+xhs_auto.yaml
+xhs_auto.local.yaml
 
 # Login state / browser profiles (do NOT commit)
 .grafana_auto_profile/
 .grafana_auto_profile_test*/
+.xhs_profile/
+.xhs_profile_test*/
+.xhs_state.json
 
 # Node deps cache
 .grafana_auto_deps/node_modules/
 .grafana_auto_deps/package-lock.json
 npm-debug.log*
+.deps/node_modules/
+.deps/package-lock.json

@@ -1,0 +1,10 @@
+{
+  "name": "screenshots-util-deps",
+  "private": true,
+  "dependencies": {
+    "playwright-core": "^1.41.0",
+    "pngjs": "^7.0.0",
+    "yaml": "^2.4.2"
+  }
+}
+

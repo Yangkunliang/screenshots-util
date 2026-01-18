@@ -1,17 +1,24 @@
 # screenshots-util
 
-用于批量生成 Grafana（或任意网页）的长截图，支持：
+工具集合：
+- Grafana（或任意网页）批量长截图
+- 小红书 Java 知识点内容生成与发布（可选）
+
+## Grafana 长截图
+支持：
 - YAML 配置多个链接/多目录输出
 - 需要登录的页面通过浏览器 Profile 复用登录态
 - 内部滚动容器的“滚动 + 拼接”长图
 
-## 使用教程
-详见：[docs/GRAFANA_AUTO.md](./docs/GRAFANA_AUTO.md)
+使用教程：见 [apps/grafana/docs/GRAFANA_AUTO.md](./apps/grafana/docs/GRAFANA_AUTO.md)
+
+## 小红书内容生成
+使用教程：见 [apps/xhs/docs/XHS_AUTO.md](./apps/xhs/docs/XHS_AUTO.md)
 
 ## 开源发布注意事项
 - 不要提交真实 Grafana 地址、账号、Cookie、Token
-- 把真实链接放在 `grafana_auto.yaml`（已被 .gitignore 忽略）
-- 仓库内提交 `configs/grafana_auto.demo.yaml` 作为可公开的模板示例
+- 不要提交小红书账号信息、Cookie、登录态目录
+- 本地私有配置：`grafana_auto.yaml`、`xhs_auto.yaml`（已被 .gitignore 忽略）
 
 ## 发布到 GitHub（示例）
 在推送前，建议先确认本地没有敏感信息被纳入提交：

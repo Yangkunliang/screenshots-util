@@ -12,7 +12,7 @@ defaults:
 
 targets:
   - name: scroll_demo
-    url: file:///ABSOLUTE/PATH/TO/demo/scroll_demo.html
+    url: file:///ABSOLUTE/PATH/TO/apps/grafana/demo/scroll_demo.html
     waitSeconds: 1
     enabled: true
   - name: grafana_home
