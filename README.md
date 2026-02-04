@@ -1,8 +1,13 @@
-# screenshots-util
+# OmniFlow
 
-工具集合：
-- Grafana（或任意网页）批量长截图
-- 小红书 Java 知识点内容生成与发布（可选）
+全能自动化工具流集合（OmniFlow）。旨在打造像 Hutool 一样的自动化脚本工具箱，聚合各类实用的自动化流程。
+
+目前支持的功能模块：
+- **Grafana/网页长截图**：支持滚动长图拼接、批量任务、Cookie 复用。
+- **小红书自动发布**：支持内容生成、多账号/多笔记自动发布。
+
+## 模块导航
+
 
 ## Grafana 长截图
 支持：
@@ -35,6 +40,6 @@ git init
 git add .
 git commit -m "init"
 git branch -M main
-git remote add origin https://github.com/xxx/screenshots-util.git
+git remote add origin https://github.com/Yangkunliang/OmniFlow.git
 git push -u origin main
 ```
